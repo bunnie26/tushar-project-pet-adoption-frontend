@@ -11,10 +11,13 @@ import {
 } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { useSinglePetData } from '../services/hooks';
+import { useNavigate } from "react-router-dom";
+
 
 const SinglePetPage = () => {
   const { petId } = useParams();
   const { data: petData, isLoading } = useSinglePetData(petId);
+  const navigate = useNavigate();
 
   return (
     <Box
@@ -148,6 +151,9 @@ const SinglePetPage = () => {
                   opacity: 0.9,
                 },
               }}
+              onClick={()=>{
+                console.log("opop")
+                navigate("/adopted")}}
             >
               Adopt {petData.name}
             </Button>

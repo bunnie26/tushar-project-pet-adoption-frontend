@@ -187,6 +187,7 @@ function ResponsiveAppBar() {
                       : () => {
                           navigate("/auth/login"); // Redirect to login page when unauthorized access event is triggered
                           localStorage.removeItem("token");
+                          handleCloseUserMenu()
                         }
                   }
                 >

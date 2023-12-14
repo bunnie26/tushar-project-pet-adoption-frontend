@@ -10,6 +10,7 @@ import queryClient from "./services/queryClient";
 import toast, { Toaster } from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
 import React, { useEffect } from "react";
+import AdoptedPage from "./pages/AddoptedPage";
 
 const Homepage = lazy(() => import("./pages/Homepage"));
 const Donate = lazy(() => import("./pages/Donate"));
@@ -64,6 +65,14 @@ function App() {
               element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <Profile />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/adopted"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <AdoptedPage />
                 </Suspense>
               }
             />
