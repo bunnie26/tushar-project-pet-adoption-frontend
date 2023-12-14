@@ -1,0 +1,6 @@
+// This file is initialising query client
+import { QueryClient } from "react-query";
+
+export default new QueryClient({
+  defaultOptions: { queries: { refetchOnWindowFocus: false } },
+});
